@@ -1,0 +1,50 @@
+<form [formGroup]="form" class="normall-form">
+    <mat-grid-list cols="2">
+        <mat-grid-tile>
+            <div class="controles-container">
+                <input type="hidden" formControlName="$key">
+                <mat-form-field  >
+                    <input type="text" matInput placeholder="Name" formControlName="name" >
+                    
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Email" formControlName="email" >
+                   
+                </mat-form-field>
+               <mat-form-field>
+                <input type="text" matInput placeholder="Mobile Number" fromControlName="mobile" >
+               
+               </mat-form-field>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="City" fromConterolName="city" >
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container">
+                <div class="add-bottom-padding">
+                    <mat-radio-group aria-label="Select an option" formControlName="gender" >
+                        <mat-radio-button value="1">Male</mat-radio-button>
+                        <mat-radio-button value="2">Female</mat-radio-button>
+                        <mat-radio-button value="3">Oher</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <mat-form-field>
+                    <mat-select  placeholder="Depertment" formControlName="dept" >
+                        <mat-option>None</mat-option>
+                        <ng-container *ngFor="let x of departments">
+                            <mat-option value="{{x.id}}">{{x.value}}</mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+                <div class="add-bottom-padding">
+                    <mat-checkbox fromControlName="isPerment"> All Details is True</mat-checkbox>
+                </div>
+                <div class="button-row">
+                    <button mat-raised-button color="primary" type="submit" (ngSubmit)="submitForm()">Submit</button>
+                    <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>
