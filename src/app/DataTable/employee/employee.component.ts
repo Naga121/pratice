@@ -46,7 +46,7 @@ export class EmployeeComponent implements OnInit {
   }
 
 
-  
+
 
   clickEmp() {
     this.form.reset();
@@ -69,6 +69,7 @@ export class EmployeeComponent implements OnInit {
       err => {
         this.toastr.error("your data is Error", 'plese check');
         console.log(err);
+        alert('error')
       }
     )
   }
