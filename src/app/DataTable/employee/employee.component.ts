@@ -45,6 +45,9 @@ export class EmployeeComponent implements OnInit {
     return this.form.controls;
   }
 
+
+  
+
   clickEmp() {
     this.form.reset();
     this.postData = true;
