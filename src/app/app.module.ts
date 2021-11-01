@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngmaterialModule } from './angmaterial/angmaterial.module';
-import { EmpDataService } from './Service/emp-data.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,8 +16,8 @@ import { CustomDitectiveComponent } from './Directives/custom-ditective/custom-d
 import { RendererDirective } from './Directives/renderer.directive';
 import { EmployeeComponent } from './DataTable/employee/employee.component';
 import { EmployeesComponent } from './DataTable/employees/employees.component';
-import { EmployeeListComponent } from './DataTable/employee-list/employee-list.component';
-import { HttpClient } from '@angular/common/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 
 @NgModule({
@@ -28,7 +30,6 @@ import { HttpClient } from '@angular/common/http';
     RendererDirective,
     EmployeeComponent,
     EmployeesComponent,
-    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +38,11 @@ import { HttpClient } from '@angular/common/http';
     FormsModule,
     AngmaterialModule,
     ReactiveFormsModule,
-    HttpClient
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    NgxPaginationModule,
+    Ng2SearchPipeModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

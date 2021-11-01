@@ -18,3 +18,13 @@ mat-radio-group mat-radio-button{
 .button-row button{
     margin: 5px;
 }
+
+td .btn{
+    height: 25px;
+    font-size: x-small;
+}
+td .btn mat-icon{
+    position: relative;
+    top: -7px;
+    font-size: x-large;
+}
